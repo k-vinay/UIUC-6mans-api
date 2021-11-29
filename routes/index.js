@@ -19,8 +19,20 @@ module.exports = function (app, router, mongoose) {
     }));
 
     const Match = mongoose.model('Match', new Schema({
-        team1: [User.schema],
-        team2: [User.schema],
+        team1: [
+            {
+                _id: {type: String},
+                name: {type: String},
+                elo: {type: Number}
+            }
+        ],
+        team2: [
+            {
+                _id: {type: String},
+                name: {type: String},
+                elo: {type: Number}
+            }
+        ],
         result: {type: Number, default: -1},
         team1EloDiff: {type: Number, default: 0},
         team2EloDiff: {type: Number, default: 0}

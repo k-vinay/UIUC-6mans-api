@@ -29,4 +29,3 @@ app.use(bodyParser.json());
 require('./routes')(app, router, mongoose);
 
 app.listen(port);
-console.log("Server started at port", port);
