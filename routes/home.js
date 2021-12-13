@@ -1,9 +1,11 @@
 module.exports = function (router) {
 
-    var homeRoute = router.route('/');
-
-    homeRoute.get(function (req, res) {
+    router.route('/').get(function (req, res) {
         res.status(200).send("Hello World!\nApp Engine Test");
+    });
+
+    router.route('/help').get(function (req, res) {
+        res.status(200).send("View the docs on GitHub: <url>");
     });
 
     return router;
